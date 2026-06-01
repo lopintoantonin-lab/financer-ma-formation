@@ -6,6 +6,15 @@
 <title>Qui finance ma formation ? Simulateur de reste à charge 2026 | FinancerMaFormation</title>
 <meta name="description" content="Indépendant, artisan, commerçant, libéral ou salarié : découvrez en 30 secondes quel fonds finance votre formation (FAFCEA, AGEFICE, FIF-PL, OPCO, CPF) et estimez votre reste à charge en 2026.">
 <link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://lopintoantonin-lab.github.io/financer-ma-formation/">
+<meta name="author" content="Antonin Lopinto">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Qui finance ma formation ? Simulateur de reste à charge 2026">
+<meta property="og:description" content="Découvrez en 30 secondes quel fonds finance votre formation (FAFCEA, AGEFICE, FIF-PL, OPCO, CPF) et estimez votre reste à charge.">
+<meta property="og:url" content="https://lopintoantonin-lab.github.io/financer-ma-formation/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 </head>
 <body>
 
@@ -63,6 +72,7 @@
       <div class="row"><span>Plafond de prise en charge / an</span><b id="plafond">—</b></div>
       <div class="row" id="racRow"><span>Reste à charge estimé</span><b id="rac">—</b></div>
       <div class="desc" id="note"></div>
+      <div style="margin-top:14px"><a id="guideLink" class="btn" style="display:inline-block;width:auto;padding:9px 16px;font-size:14px" href="#">Voir le guide détaillé de votre fonds →</a></div>
     </div>
   </div>
 
@@ -112,6 +122,25 @@
     <a class="tile" href="fif-pl-avocat.html"><div class="ic">⚖️</div><h3>Avocat</h3><p>FIF-PL + formation continue.</p></a>
     <a class="tile" href="financement-formation-anglais.html"><div class="ic">🇬🇧</div><h3>Formation d'anglais</h3><p>Avec le CPF (TOEIC, Linguaskill).</p></a>
   </div>
+
+  <h2>Comment ça marche, en 3 étapes</h2>
+  <ol style="margin:10px 0 10px 20px">
+    <li style="margin:6px 0"><strong>Identifiez votre fonds</strong> selon votre statut — le simulateur ci-dessus le fait pour vous.</li>
+    <li style="margin:6px 0"><strong>Vérifiez votre plafond et votre reste à charge</strong>, et que vous êtes à jour de votre cotisation (CFP via l'URSSAF, ou contribution VIVEA via la MSA).</li>
+    <li style="margin:6px 0"><strong>Déposez votre demande</strong> avant la formation, avec un organisme certifié Qualiopi. <a href="demarches-financement-formation.html">Voir les démarches détaillées</a>.</li>
+  </ol>
+
+  <h2>Questions fréquentes</h2>
+  <dl class="faq">
+    <dt>Qui finance ma formation professionnelle ?</dt>
+    <dd>Cela dépend de votre statut : FAFCEA pour les artisans, AGEFICE pour les commerçants et dirigeants non salariés, FIF-PL pour les professions libérales, VIVEA pour les agriculteurs, et l'OPCO de votre branche + le CPF pour les salariés.</dd>
+    <dt>Combien puis-je obtenir ?</dt>
+    <dd>De quelques centaines d'euros à 4 800 € (FAFCEA) ou 5 000 € (AGEFICE pour un diplôme) par an, selon votre fonds et votre formation.</dd>
+    <dt>Quand faut-il faire la demande ?</dt>
+    <dd>Avant le début de la formation dans presque tous les cas (jusqu'à 4 mois avant pour l'AGEFICE). Seul le FIF-PL tolère un dépôt jusqu'à 10 jours après le 1er jour.</dd>
+    <dt>La formation doit-elle être certifiée ?</dt>
+    <dd>L'organisme doit être certifié Qualiopi en 2026 : c'est la condition n°1 pour obtenir un financement, quel que soit le fonds.</dd>
+  </dl>
 </main>
 
 <footer><div class="wrap">
@@ -132,6 +161,7 @@ var FONDS={
   agricole:{nom:'VIVEA',desc:"Fonds pour la Formation des Entrepreneurs du Vivant.",plaf:2000,
     note:"2 000 €/an par bénéficiaire en 2026, si vous êtes à jour de votre contribution MSA. Prise en charge de 20 à 25 €/h selon le type de formation."}
 };
+var GUIDE={artisan:'fafcea-artisan.html',commercant:'agefice-commercant.html',liberal:'fif-pl-profession-liberale.html',salarie:'opco-salarie.html',agricole:'vivea-agriculteur.html',micro:'micro-entrepreneur-formation.html'};
 function eur(n){return n.toLocaleString('fr-FR',{maximumFractionDigits:0})+' €';}
 function onStatut(){
   var s=document.getElementById('statut').value;
@@ -169,8 +199,20 @@ function calc(){
     racRow.style.display='none';
   }
   document.getElementById('note').textContent = prefix + f.note + " Si vous mobilisez votre CPF, une participation forfaitaire de 150 € est due depuis le 2 avril 2026 (sauf exonération).";
+  var g=document.getElementById('guideLink'); g.href=GUIDE[s]||'comparatif-fonds-formation.html';
   document.getElementById('res').classList.add('show');
 }
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Simulateur — Qui finance ma formation ?","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://lopintoantonin-lab.github.io/financer-ma-formation/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Qui finance ma formation professionnelle ?","acceptedAnswer":{"@type":"Answer","text":"Cela dépend de votre statut : FAFCEA pour les artisans, AGEFICE pour les commerçants et dirigeants non salariés, FIF-PL pour les professions libérales, VIVEA pour les agriculteurs, et l'OPCO de la branche plus le CPF pour les salariés."}},
+{"@type":"Question","name":"Combien puis-je obtenir pour financer ma formation ?","acceptedAnswer":{"@type":"Answer","text":"De quelques centaines d'euros à 4 800 € avec le FAFCEA ou 5 000 € avec l'AGEFICE pour un diplôme, par an, selon votre fonds et votre formation."}},
+{"@type":"Question","name":"Quand faut-il demander le financement de sa formation ?","acceptedAnswer":{"@type":"Answer","text":"Avant le début de la formation dans presque tous les cas, jusqu'à 4 mois avant pour l'AGEFICE. Seul le FIF-PL tolère un dépôt jusqu'à 10 jours après le premier jour."}},
+{"@type":"Question","name":"La formation doit-elle être certifiée Qualiopi ?","acceptedAnswer":{"@type":"Answer","text":"Oui, l'organisme doit être certifié Qualiopi en 2026 : c'est la condition numéro un pour obtenir un financement."}}
+]}
 </script>
 </body>
 </html>
