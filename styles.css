@@ -1,0 +1,66 @@
+/* FinancerMaFormation — feuille de style partagée */
+:root{
+  --bg:#f5f9f8; --card:#ffffff; --ink:#0d1f1c; --mut:#566b66; --line:#dfe9e6;
+  --brand:#0d9488; --brand-d:#0b7d73; --ok:#16a34a; --soft:#e7f5f2;
+  --shadow:0 1px 3px rgba(13,31,28,.06),0 8px 24px rgba(13,31,28,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.wide{max-width:980px}
+
+.nav{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.4px;color:var(--ink)}
+.logo span{color:var(--brand)}
+.nav-links a{color:var(--mut);font-size:14px;font-weight:600;margin-left:18px}
+.nav-links a:hover{color:var(--brand)}
+
+.hero{text-align:center;padding:54px 0 30px}
+.hero h1{font-size:33px;font-weight:800;letter-spacing:-.8px;line-height:1.2}
+.hero p{color:var(--mut);font-size:17px;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin:8px 0 40px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow);transition:.15s}
+.tile:hover{transform:translateY(-3px);border-color:#bfded8;text-decoration:none}
+.tile .ic{font-size:24px}
+.tile h3{font-size:15px;margin:10px 0 4px;color:var(--ink)}
+.tile p{font-size:13px;color:var(--mut)}
+
+.page{padding:36px 0 60px}
+.crumb{font-size:13px;color:var(--mut);margin-bottom:14px}
+.page h1{font-size:27px;font-weight:800;letter-spacing:-.5px;line-height:1.25}
+.lead{font-size:16px;color:var(--mut);margin:12px 0 8px}
+.page h2{font-size:20px;font-weight:700;margin:32px 0 10px;letter-spacing:-.3px}
+.page p{margin:10px 0}
+.page ul{margin:10px 0 10px 22px}
+.page li{margin:5px 0}
+
+.calc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);margin:22px 0}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.field .hint{font-weight:400;color:var(--mut);font-size:12.5px}
+.field input,.field select{width:100%;padding:11px 13px;font-size:16px;border:1px solid var(--line);border-radius:10px;background:#fbfdfc;color:var(--ink)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--brand);background:#fff}
+.btn{display:inline-block;width:100%;background:var(--brand);color:#fff;font-size:16px;font-weight:700;border:none;
+  border-radius:10px;padding:13px;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--brand-d)}
+.result{margin-top:20px;background:var(--soft);border:1px solid #c7e8e2;border-radius:12px;padding:20px;display:none}
+.result.show{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.result .lbl{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+.result .big{font-size:26px;font-weight:800;color:var(--brand-d);letter-spacing:-.5px;margin:2px 0 6px}
+.result .row{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-top:1px solid #c7e8e2;font-size:14px}
+.result .row b{font-weight:700;text-align:right}
+.result .desc{font-size:13px;color:var(--mut);margin-top:10px}
+
+.note{font-size:13px;color:var(--mut);background:#fff8e6;border:1px solid #f3e2b3;border-radius:10px;padding:12px 14px;margin:18px 0}
+.faq dt{font-weight:700;margin-top:16px}
+.faq dd{color:var(--mut);margin-left:0}
+
+footer{border-top:1px solid var(--line);background:var(--card);margin-top:40px;padding:30px 0;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{color:var(--mut)}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qui finance ma formation ? Simulateur de reste à charge 2026 | FinancerMaFormation</title>
+<meta name="description" content="Indépendant, artisan, commerçant, libéral ou salarié : découvrez en 30 secondes quel fonds finance votre formation (FAFCEA, AGEFICE, FIF-PL, OPCO, CPF) et estimez votre reste à charge en 2026.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="index.html">Financer<span>MaFormation</span></a>
+  <div class="nav-links">
+    <a href="fafcea-artisan.html">Artisan</a>
+    <a href="agefice-commercant.html">Commerçant</a>
+    <a href="fif-pl-profession-liberale.html">Libéral</a>
+    <a href="cpf-150-euros-2026.html">CPF 2026</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Qui finance ma formation ?</h1>
+  <p>Répondez à 2 questions et découvrez quel fonds prend en charge votre formation professionnelle, le plafond, et ce qu'il vous reste à payer.</p>
+</div></header>
+
+<main class="wrap">
+  <div class="calc">
+    <div class="field">
+      <label>Quel est votre statut ?</label>
+      <select id="statut" onchange="onStatut()">
+        <option value="">— Choisissez —</option>
+        <option value="artisan">Artisan (inscrit au RNE / CMA)</option>
+        <option value="commercant">Commerçant ou dirigeant non salarié (RCS)</option>
+        <option value="liberal">Profession libérale</option>
+        <option value="micro">Micro-entrepreneur / auto-entrepreneur</option>
+        <option value="salarie">Salarié du privé</option>
+        <option value="agricole">Exploitant agricole</option>
+      </select>
+    </div>
+    <div class="field" id="microWrap" style="display:none">
+      <label>Votre activité de micro-entrepreneur</label>
+      <select id="microAct">
+        <option value="artisan">Artisanale</option>
+        <option value="commercant">Commerciale / vente</option>
+        <option value="liberal">Libérale</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Coût de la formation <span class="hint">(en € TTC, optionnel)</span></label>
+      <input type="number" id="cout" placeholder="ex : 2000" inputmode="numeric">
+    </div>
+    <div class="field" id="plafWrap" style="display:none">
+      <label>Plafond annuel de votre fonds <span class="hint">(si vous le connaissez — dépend de votre profession)</span></label>
+      <input type="number" id="plafConnu" placeholder="ex : 900" inputmode="numeric">
+    </div>
+    <button class="btn" onclick="calc()">Voir qui me finance</button>
+
+    <div class="result" id="res">
+      <div class="lbl">Votre fonds financeur</div>
+      <div class="big" id="fonds">—</div>
+      <div class="desc" id="fondsDesc"></div>
+      <div class="row"><span>Plafond de prise en charge / an</span><b id="plafond">—</b></div>
+      <div class="row" id="racRow"><span>Reste à charge estimé</span><b id="rac">—</b></div>
+      <div class="desc" id="note"></div>
+    </div>
+  </div>
+
+  <div class="note">⚠️ Estimation indicative pour vous orienter. Les plafonds et taux exacts dépendent de votre secteur, de votre profession et de votre situation à jour de cotisation. Vérifiez auprès de votre fonds avant de vous engager.</div>
+
+  <h2>Comprendre le financement de votre formation</h2>
+  <p>En France, chaque professionnel cotise pour sa formation (la <strong>Contribution à la Formation Professionnelle</strong>, prélevée par l'URSSAF ou la MSA). Cette cotisation « ouvre le robinet » d'un <strong>fonds</strong> qui rembourse tout ou partie de vos formations. Le fonds dépend de votre statut :</p>
+
+  <div class="grid">
+    <a class="tile" href="fafcea-artisan.html"><div class="ic">🔨</div><h3>Artisan → FAFCEA</h3><p>Jusqu'à 4 800 €/an de prise en charge.</p></a>
+    <a class="tile" href="agefice-commercant.html"><div class="ic">🏪</div><h3>Commerçant → AGEFICE</h3><p>Jusqu'à 3 000 €/an (5 000 € diplômant).</p></a>
+    <a class="tile" href="fif-pl-profession-liberale.html"><div class="ic">⚖️</div><h3>Libéral → FIF-PL</h3><p>Plafond selon votre profession.</p></a>
+    <a class="tile" href="cpf-150-euros-2026.html"><div class="ic">💳</div><h3>CPF : 150 € en 2026</h3><p>La nouvelle participation obligatoire.</p></a>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <div>© 2026 FinancerMaFormation — information indépendante</div>
+  <div>Estimations à valeur indicative.</div>
+</div></footer>
+
+<script>
+var FONDS={
+  artisan:{nom:'FAFCEA',desc:"Fonds d'Assurance Formation des Chefs d'Entreprises Artisanales.",plaf:4800,
+    note:"Jusqu'à 80 €/h pour un parcours individualisé, dans la limite de 4 800 €/an. Les taux exacts varient selon votre secteur (bâtiment, alimentation, fabrication/services). Condition : être à jour de votre CFP."},
+  commercant:{nom:'AGEFICE',desc:"Fonds de formation des dirigeants non salariés du commerce et des services.",plaf:3000,
+    note:"3 000 €/an si votre CFP est ≥ 7 € (jusqu'à 5 000 € pour une formation diplômante), 600 €/an sinon. Tarif présentiel pris en charge : 42 €/h."},
+  liberal:{nom:'FIF-PL',desc:"Fonds Interprofessionnel de Formation des Professionnels Libéraux.",plaf:null,
+    note:"Le plafond annuel dépend de votre profession (code NAF), souvent entre 600 € et 1 500 €. Le e-learning est pris en charge à 50 %. Les formations éligibles au CPF ne sont pas financées par le FIF-PL."},
+  salarie:{nom:'votre OPCO + le CPF',desc:"OPCO de votre branche (via l'employeur) et Compte Personnel de Formation.",plaf:null,
+    note:"Votre employeur peut financer via le plan de développement des compétences (l'OPCO de votre branche). Vous pouvez aussi mobiliser votre CPF. La demande à l'OPCO se fait AVANT le début de la formation."},
+  agricole:{nom:'VIVEA',desc:"Fonds pour la Formation des Entrepreneurs du Vivant.",plaf:2000,
+    note:"2 000 €/an par bénéficiaire en 2026, si vous êtes à jour de votre contribution MSA. Prise en charge de 20 à 25 €/h selon le type de formation."}
+};
+function eur(n){return n.toLocaleString('fr-FR',{maximumFractionDigits:0})+' €';}
+function onStatut(){
+  var s=document.getElementById('statut').value;
+  document.getElementById('microWrap').style.display = (s==='micro')?'block':'none';
+  var libLike = (s==='liberal'||s==='salarie');
+  document.getElementById('plafWrap').style.display = libLike?'block':'none';
+}
+function calc(){
+  var s=document.getElementById('statut').value;
+  if(!s){alert('Choisissez votre statut.');return;}
+  var key=s;
+  var prefix='';
+  if(s==='micro'){
+    key=document.getElementById('microAct').value;
+    prefix="En tant que micro-entrepreneur, vous devez avoir déclaré du chiffre d'affaires et payé votre CFP pour ouvrir vos droits (0 € de CA = 0 € de droits). ";
+  }
+  var f=FONDS[key];
+  var cout=parseFloat(document.getElementById('cout').value)||0;
+  var plafConnu=parseFloat(document.getElementById('plafConnu').value)||0;
+  var plafond = plafConnu>0 ? plafConnu : f.plaf;
+
+  document.getElementById('fonds').textContent=f.nom;
+  document.getElementById('fondsDesc').textContent=f.desc;
+  document.getElementById('plafond').textContent = plafond ? eur(plafond)+'/an' : 'selon votre profession';
+
+  var racRow=document.getElementById('racRow');
+  if(plafond && cout>0){
+    var rac=Math.max(0,cout-plafond);
+    document.getElementById('rac').textContent=eur(rac)+(rac===0?' (entièrement couvert)':'');
+    racRow.style.display='flex';
+  } else if(cout>0 && !plafond){
+    document.getElementById('rac').textContent='indiquez votre plafond ci-dessus';
+    racRow.style.display='flex';
+  } else {
+    racRow.style.display='none';
+  }
+  document.getElementById('note').textContent = prefix + f.note + " Si vous mobilisez votre CPF, une participation forfaitaire de 150 € est due depuis le 2 avril 2026 (sauf exonération).";
+  document.getElementById('res').classList.add('show');
+}
+</script>
+</body>
+</html>
