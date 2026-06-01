@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lopintoantonin-lab.github.io/financer-ma-formation/sitemap.xml

@@ -24,6 +24,17 @@ de formation (FAFCEA, AGEFICE, FIF-PL, OPCO, CPF, VIVEA) et estime leur reste à
    git add -A && git commit -m "Autopilote : ajout de la page [nom]" && git push
    ```
 
+## Standard de qualité (depuis le 01/06/2026)
+
+Le site a été approfondi. Toute NOUVELLE page doit respecter ce standard (modèle : `comparatif-fonds-formation.html` ou `agefice-commercant.html`) :
+- `<nav>` à 4 liens : Comparatif · Démarches · Mon OPCO · CPF 2026.
+- Une ligne « Mis à jour le [date] » sous le chapô.
+- Quand c'est pertinent : une section « Comment faire la demande ? » (où déposer, documents, délai, remboursement) et un rappel **Qualiopi obligatoire en 2026**.
+- **Maillage interne** : lier au moins 2 pages connexes (comparatif, démarches, ou les guides par statut).
+- Pied de page « de confiance » avec liens À propos · Sources · Mentions légales + mention « Information indépendante, non affiliée ».
+- Si la page a une FAQ, ajouter un bloc `<script type="application/ld+json">` de type FAQPage.
+- Penser à ajouter la nouvelle URL dans `sitemap.xml`.
+
 ## Règles de sécurité
 
 - **Que de l'AJOUT.** Ne casse/supprime jamais une page existante (surtout pas le simulateur de `index.html`).
