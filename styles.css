@@ -121,6 +121,20 @@ footer a{color:var(--mut)}
 .kf .k .n{font-size:23px;font-weight:800;color:var(--brand);letter-spacing:-.5px}
 .kf .k .l{font-size:12px;color:var(--mut);margin-top:3px;line-height:1.35}
 
+/* Sélecteur de profil "Je suis…" */
+.profiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:14px 0 42px}
+.ptile{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 14px;text-align:center;box-shadow:var(--shadow);transition:.18s}
+.ptile:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cfe0fd;text-decoration:none}
+.ptile .e{font-size:36px;display:block;margin-bottom:8px}
+.ptile h3{font-size:15px;color:var(--ink);margin:0 0 2px}
+.ptile span{font-size:12px;color:var(--mut)}
+
+/* Étapes numérotées */
+.steps{margin:16px 0}
+.step{display:flex;gap:14px;align-items:flex-start;padding:9px 0}
+.step .num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.step .tx{font-size:14.5px;padding-top:3px}
+
 /* Recherche + liste compacte */
 .search{margin:8px 0 32px}
 .search input{width:100%;padding:16px 20px;font-size:16px;border:1.5px solid var(--line);border-radius:999px;background:#fff;box-shadow:var(--shadow)}
