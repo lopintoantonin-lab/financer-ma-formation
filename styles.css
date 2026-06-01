@@ -73,3 +73,15 @@ footer a{color:var(--mut)}
   .result{display:block !important;border:none !important;background:#fff !important}
   .result .big{color:#000 !important}
 }
+
+@media (max-width:600px){
+  .hero{padding:34px 0 22px}
+  .hero h1{font-size:26px}
+  .hero p{font-size:15px}
+  .page h1{font-size:23px}
+  .nav .wrap{height:auto;padding:10px 20px;flex-wrap:wrap;gap:6px}
+  .nav-links a{margin:0 10px 0 0}
+  .calc{padding:18px}
+  .inline{flex-direction:column;gap:0}
+}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}

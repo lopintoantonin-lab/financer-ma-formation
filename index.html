@@ -22,9 +22,9 @@
 <nav class="nav"><div class="wrap">
   <a class="logo" href="index.html">Financer<span>MaFormation</span></a>
   <div class="nav-links">
-    <a href="fafcea-artisan.html">Artisan</a>
-    <a href="agefice-commercant.html">Commerçant</a>
-    <a href="fif-pl-profession-liberale.html">Libéral</a>
+    <a href="comparatif-fonds-formation.html">Comparatif</a>
+    <a href="demarches-financement-formation.html">Démarches</a>
+    <a href="trouver-son-opco.html">Mon OPCO</a>
     <a href="cpf-150-euros-2026.html">CPF 2026</a>
   </div>
 </div></nav>
@@ -37,7 +37,7 @@
 <main class="wrap">
   <div class="calc">
     <div class="field">
-      <label>Quel est votre statut ?</label>
+      <label for="statut">Quel est votre statut ?</label>
       <select id="statut" onchange="onStatut()">
         <option value="">— Choisissez —</option>
         <option value="artisan">Artisan (inscrit au RNE / CMA)</option>
@@ -49,7 +49,7 @@
       </select>
     </div>
     <div class="field" id="microWrap" style="display:none">
-      <label>Votre activité de micro-entrepreneur</label>
+      <label for="microAct">Votre activité de micro-entrepreneur</label>
       <select id="microAct">
         <option value="artisan">Artisanale</option>
         <option value="commercant">Commerciale / vente</option>
@@ -57,16 +57,16 @@
       </select>
     </div>
     <div class="field">
-      <label>Coût de la formation <span class="hint">(en € TTC, optionnel)</span></label>
+      <label for="cout">Coût de la formation <span class="hint">(en € TTC, optionnel)</span></label>
       <input type="number" id="cout" placeholder="ex : 2000" inputmode="numeric">
     </div>
     <div class="field" id="plafWrap" style="display:none">
-      <label>Plafond annuel de votre fonds <span class="hint">(si vous le connaissez — dépend de votre profession)</span></label>
+      <label for="plafConnu">Plafond annuel de votre fonds <span class="hint">(si vous le connaissez — dépend de votre profession)</span></label>
       <input type="number" id="plafConnu" placeholder="ex : 900" inputmode="numeric">
     </div>
     <button class="btn" onclick="calc()">Voir qui me finance</button>
 
-    <div class="result" id="res">
+    <div class="result" id="res" aria-live="polite">
       <div class="lbl">Votre fonds financeur</div>
       <div class="big" id="fonds">—</div>
       <div class="desc" id="fondsDesc"></div>
@@ -201,7 +201,8 @@ function calc(){
     document.getElementById('rac').textContent='indiquez votre plafond ci-dessus';
     racRow.style.display='flex';
   } else {
-    racRow.style.display='none';
+    document.getElementById('rac').textContent='entrez le coût de la formation ci-dessus';
+    racRow.style.display='flex';
   }
   document.getElementById('note').textContent = prefix + f.note + " Si vous mobilisez votre CPF, une participation forfaitaire de 150 € est due depuis le 2 avril 2026 (sauf exonération).";
   var g=document.getElementById('guideLink'); g.href=GUIDE[s]||'comparatif-fonds-formation.html';
