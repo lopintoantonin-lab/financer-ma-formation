@@ -74,8 +74,8 @@
       <div class="row" id="racRow"><span>Reste à charge estimé</span><b id="rac">—</b></div>
       <div class="desc" id="note"></div>
       <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-        <a id="guideLink" class="btn" style="display:inline-block;width:auto;padding:9px 16px;font-size:14px" href="#">Voir le guide détaillé →</a>
-        <button onclick="window.print()" style="width:auto;padding:9px 16px;font-size:14px;background:#fff;color:var(--brand);border:1px solid var(--brand);border-radius:10px;font-weight:700;cursor:pointer">🖨️ Imprimer / enregistrer mon plan</button>
+        <a id="guideLink" class="btn" style="display:inline-block;width:auto;padding:9px 18px;font-size:14px" href="#">Voir le guide détaillé →</a>
+        <button onclick="window.print()" style="width:auto;padding:9px 18px;font-size:14px;background:#fff;color:var(--brand);border:1px solid var(--brand);border-radius:999px;font-weight:700;cursor:pointer">🖨️ Mon plan</button>
       </div>
     </div>
   </div>
@@ -89,70 +89,71 @@
     <div class="stat"><div class="n">2026</div><div class="l">à jour des barèmes</div></div>
   </div>
 
-  <h2>Les essentiels</h2>
-  <div class="grid">
-    <a class="tile" href="comparatif-fonds-formation.html"><div class="ic">⚖️</div><h3>Comparatif des fonds</h3><p>Tous les fonds côte à côte : plafonds, délais, remboursement.</p></a>
-    <a class="tile" href="demarches-financement-formation.html"><div class="ic">📝</div><h3>Les démarches</h3><p>Où déposer, quels documents, quels délais — pas à pas.</p></a>
-    <a class="tile" href="trouver-son-opco.html"><div class="ic">🔎</div><h3>Trouver son OPCO</h3><p>La liste des 11 OPCO + l'outil officiel.</p></a>
-    <a class="tile" href="lexique-financement-formation.html"><div class="ic">📖</div><h3>Lexique</h3><p>FAFCEA, AGEFICE, FIF-PL… tous les sigles expliqués.</p></a>
+  <div class="search">
+    <input id="q" type="search" oninput="search()" placeholder="🔎 Cherchez votre situation : artisan, CPF, infirmier, reconversion…">
   </div>
+  <div id="searchResults" class="grid" style="display:none"></div>
 
-  <h2>Comprendre le financement de votre formation</h2>
-  <p>En France, chaque professionnel cotise pour sa formation (la <strong>Contribution à la Formation Professionnelle</strong>, prélevée par l'URSSAF ou la MSA). Cette cotisation « ouvre le robinet » d'un <strong>fonds</strong> qui rembourse tout ou partie de vos formations. Le fonds dépend de votre statut :</p>
+  <div id="browse">
+    <h2>Les essentiels</h2>
+    <div class="grid">
+      <a class="tile" href="comparatif-fonds-formation.html"><div class="ic">⚖️</div><h3>Comparatif des fonds</h3><p>Tous les fonds côte à côte : plafonds, délais, remboursement.</p></a>
+      <a class="tile" href="demarches-financement-formation.html"><div class="ic">📝</div><h3>Les démarches</h3><p>Où déposer, quels documents, quels délais — pas à pas.</p></a>
+      <a class="tile" href="trouver-son-opco.html"><div class="ic">🔎</div><h3>Trouver son OPCO</h3><p>La liste des 11 OPCO + l'outil officiel.</p></a>
+      <a class="tile" href="lexique-financement-formation.html"><div class="ic">📖</div><h3>Lexique</h3><p>FAFCEA, AGEFICE, FIF-PL… tous les sigles.</p></a>
+    </div>
 
-  <div class="grid">
-    <a class="tile" href="fafcea-artisan.html"><div class="ic">🔨</div><h3>Artisan → FAFCEA</h3><p>Jusqu'à 4 800 €/an de prise en charge.</p></a>
-    <a class="tile" href="agefice-commercant.html"><div class="ic">🏪</div><h3>Commerçant → AGEFICE</h3><p>Jusqu'à 3 000 €/an (5 000 € diplômant).</p></a>
-    <a class="tile" href="fif-pl-profession-liberale.html"><div class="ic">⚖️</div><h3>Libéral → FIF-PL</h3><p>Plafond selon votre profession.</p></a>
-    <a class="tile" href="cpf-150-euros-2026.html"><div class="ic">💳</div><h3>CPF : 150 € en 2026</h3><p>La nouvelle participation obligatoire.</p></a>
+    <h2>Selon votre statut</h2>
+    <div class="grid">
+      <a class="tile" href="fafcea-artisan.html"><div class="ic">🔨</div><h3>Artisan → FAFCEA</h3><p>Jusqu'à 4 800 €/an.</p></a>
+      <a class="tile" href="agefice-commercant.html"><div class="ic">🏪</div><h3>Commerçant → AGEFICE</h3><p>Jusqu'à 3 000 € (5 000 € diplômant).</p></a>
+      <a class="tile" href="fif-pl-profession-liberale.html"><div class="ic">⚖️</div><h3>Libéral → FIF-PL</h3><p>Selon votre profession.</p></a>
+      <a class="tile" href="opco-salarie.html"><div class="ic">🏢</div><h3>Salarié → OPCO</h3><p>Via l'employeur + CPF.</p></a>
+      <a class="tile" href="vivea-agriculteur.html"><div class="ic">🌾</div><h3>Agriculteur → VIVEA</h3><p>2 000 €/an en 2026.</p></a>
+      <a class="tile" href="micro-entrepreneur-formation.html"><div class="ic">🚀</div><h3>Micro-entrepreneur</h3><p>Selon votre activité.</p></a>
+    </div>
+
+    <h2>Tous les guides</h2>
+    <div class="linklist">
+      <a href="cpf-150-euros-2026.html">CPF : la participation de 150 € en 2026</a>
+      <a href="cpf-abondement-employeur.html">Éviter les 150 € : l'abondement employeur</a>
+      <a href="reste-a-charge-formation.html">Calculer son reste à charge</a>
+      <a href="agefice-plafond-2026.html">AGEFICE : les plafonds 2026 en détail</a>
+      <a href="fafcea-batiment.html">Artisan du bâtiment (FAFCEA)</a>
+      <a href="cfp-urssaf-independant.html">La CFP (contribution URSSAF)</a>
+      <a href="formation-diplomante-financement.html">Financer une formation diplômante</a>
+      <a href="dirigeant-sas-formation.html">Président de SAS / dirigeant assimilé</a>
+      <a href="formation-creation-entreprise-financement.html">Formation à la création d'entreprise</a>
+      <a href="bilan-competences-financement.html">Financer un bilan de compétences</a>
+      <a href="vae-financement.html">Financer une VAE</a>
+      <a href="reconversion-financement-transitions-pro.html">Financer une reconversion (Transitions Pro)</a>
+      <a href="formation-demandeur-emploi-aif.html">Demandeur d'emploi : l'AIF</a>
+      <a href="financement-formation-anglais.html">Financer une formation d'anglais (CPF)</a>
+      <a href="fif-pl-infirmier.html">Infirmier libéral (FIF-PL)</a>
+      <a href="fif-pl-osteopathe.html">Ostéopathe (FIF-PL)</a>
+      <a href="fif-pl-avocat.html">Avocat (FIF-PL)</a>
+      <a href="fafcea-coiffure-esthetique.html">Coiffeur / esthéticienne (FAFCEA)</a>
+    </div>
+
+    <h2>Comment ça marche, en 3 étapes</h2>
+    <ol style="margin:10px 0 10px 20px">
+      <li style="margin:6px 0"><strong>Identifiez votre fonds</strong> selon votre statut — le simulateur ci-dessus le fait pour vous.</li>
+      <li style="margin:6px 0"><strong>Vérifiez votre plafond et votre reste à charge</strong>, et que vous êtes à jour de votre cotisation (CFP via l'URSSAF, ou contribution VIVEA via la MSA).</li>
+      <li style="margin:6px 0"><strong>Déposez votre demande</strong> avant la formation, avec un organisme certifié Qualiopi. <a href="demarches-financement-formation.html">Voir les démarches détaillées</a>.</li>
+    </ol>
+
+    <h2>Questions fréquentes</h2>
+    <dl class="faq">
+      <dt>Qui finance ma formation professionnelle ?</dt>
+      <dd>Cela dépend de votre statut : FAFCEA pour les artisans, AGEFICE pour les commerçants et dirigeants non salariés, FIF-PL pour les professions libérales, VIVEA pour les agriculteurs, et l'OPCO de votre branche + le CPF pour les salariés.</dd>
+      <dt>Combien puis-je obtenir ?</dt>
+      <dd>De quelques centaines d'euros à 4 800 € (FAFCEA) ou 5 000 € (AGEFICE pour un diplôme) par an, selon votre fonds et votre formation.</dd>
+      <dt>Quand faut-il faire la demande ?</dt>
+      <dd>Avant le début de la formation dans presque tous les cas (jusqu'à 4 mois avant pour l'AGEFICE). Seul le FIF-PL tolère un dépôt jusqu'à 10 jours après le 1er jour.</dd>
+      <dt>La formation doit-elle être certifiée ?</dt>
+      <dd>L'organisme doit être certifié Qualiopi en 2026 : c'est la condition n°1 pour obtenir un financement, quel que soit le fonds.</dd>
+    </dl>
   </div>
-
-  <h2>Tous les guides</h2>
-  <div class="grid">
-    <a class="tile" href="opco-salarie.html"><div class="ic">🏢</div><h3>Salarié → OPCO</h3><p>Quel OPCO et comment faire la demande.</p></a>
-    <a class="tile" href="micro-entrepreneur-formation.html"><div class="ic">🚀</div><h3>Micro-entrepreneur</h3><p>Quel fonds selon votre activité.</p></a>
-    <a class="tile" href="fafcea-batiment.html"><div class="ic">🏗️</div><h3>Artisan du bâtiment</h3><p>FAFCEA secteur bâtiment.</p></a>
-    <a class="tile" href="agefice-plafond-2026.html"><div class="ic">📊</div><h3>AGEFICE plafonds 2026</h3><p>3 000 € / 5 000 € / 600 €.</p></a>
-    <a class="tile" href="cfp-urssaf-independant.html"><div class="ic">🧾</div><h3>La CFP (URSSAF)</h3><p>La cotisation qui ouvre vos droits.</p></a>
-    <a class="tile" href="reste-a-charge-formation.html"><div class="ic">🧮</div><h3>Calculer son reste à charge</h3><p>Méthode + exemples chiffrés.</p></a>
-    <a class="tile" href="vivea-agriculteur.html"><div class="ic">🌾</div><h3>Exploitant agricole → VIVEA</h3><p>2 000 €/an en 2026.</p></a>
-    <a class="tile" href="dirigeant-sas-formation.html"><div class="ic">👔</div><h3>Président de SAS</h3><p>Dirigeant assimilé salarié : le cas.</p></a>
-    <a class="tile" href="fif-pl-infirmier.html"><div class="ic">🩺</div><h3>Infirmier libéral</h3><p>FIF-PL et ANDPC (DPC).</p></a>
-    <a class="tile" href="formation-diplomante-financement.html"><div class="ic">🎓</div><h3>Formation diplômante</h3><p>Financer un titre RNCP.</p></a>
-    <a class="tile" href="cpf-abondement-employeur.html"><div class="ic">🤝</div><h3>Éviter les 150 € du CPF</h3><p>L'abondement employeur.</p></a>
-    <a class="tile" href="formation-creation-entreprise-financement.html"><div class="ic">💡</div><h3>Créer son entreprise</h3><p>Financer la formation au lancement.</p></a>
-  </div>
-
-  <h2>Par métier et par situation</h2>
-  <div class="grid">
-    <a class="tile" href="bilan-competences-financement.html"><div class="ic">🧭</div><h3>Bilan de compétences</h3><p>CPF, employeur, France Travail.</p></a>
-    <a class="tile" href="vae-financement.html"><div class="ic">🎖️</div><h3>VAE</h3><p>Valider son expérience en diplôme.</p></a>
-    <a class="tile" href="reconversion-financement-transitions-pro.html"><div class="ic">🔄</div><h3>Reconversion</h3><p>Transitions Pro et CPF.</p></a>
-    <a class="tile" href="formation-demandeur-emploi-aif.html"><div class="ic">🔓</div><h3>Demandeur d'emploi</h3><p>L'AIF de France Travail.</p></a>
-    <a class="tile" href="fafcea-coiffure-esthetique.html"><div class="ic">💇</div><h3>Coiffeur / esthéticienne</h3><p>FAFCEA et OPCO EP.</p></a>
-    <a class="tile" href="fif-pl-osteopathe.html"><div class="ic">💆</div><h3>Ostéopathe</h3><p>FIF-PL par profession.</p></a>
-    <a class="tile" href="fif-pl-avocat.html"><div class="ic">⚖️</div><h3>Avocat</h3><p>FIF-PL + formation continue.</p></a>
-    <a class="tile" href="financement-formation-anglais.html"><div class="ic">🇬🇧</div><h3>Formation d'anglais</h3><p>Avec le CPF (TOEIC, Linguaskill).</p></a>
-  </div>
-
-  <h2>Comment ça marche, en 3 étapes</h2>
-  <ol style="margin:10px 0 10px 20px">
-    <li style="margin:6px 0"><strong>Identifiez votre fonds</strong> selon votre statut — le simulateur ci-dessus le fait pour vous.</li>
-    <li style="margin:6px 0"><strong>Vérifiez votre plafond et votre reste à charge</strong>, et que vous êtes à jour de votre cotisation (CFP via l'URSSAF, ou contribution VIVEA via la MSA).</li>
-    <li style="margin:6px 0"><strong>Déposez votre demande</strong> avant la formation, avec un organisme certifié Qualiopi. <a href="demarches-financement-formation.html">Voir les démarches détaillées</a>.</li>
-  </ol>
-
-  <h2>Questions fréquentes</h2>
-  <dl class="faq">
-    <dt>Qui finance ma formation professionnelle ?</dt>
-    <dd>Cela dépend de votre statut : FAFCEA pour les artisans, AGEFICE pour les commerçants et dirigeants non salariés, FIF-PL pour les professions libérales, VIVEA pour les agriculteurs, et l'OPCO de votre branche + le CPF pour les salariés.</dd>
-    <dt>Combien puis-je obtenir ?</dt>
-    <dd>De quelques centaines d'euros à 4 800 € (FAFCEA) ou 5 000 € (AGEFICE pour un diplôme) par an, selon votre fonds et votre formation.</dd>
-    <dt>Quand faut-il faire la demande ?</dt>
-    <dd>Avant le début de la formation dans presque tous les cas (jusqu'à 4 mois avant pour l'AGEFICE). Seul le FIF-PL tolère un dépôt jusqu'à 10 jours après le 1er jour.</dd>
-    <dt>La formation doit-elle être certifiée ?</dt>
-    <dd>L'organisme doit être certifié Qualiopi en 2026 : c'est la condition n°1 pour obtenir un financement, quel que soit le fonds.</dd>
-  </dl>
 </main>
 
 <footer><div class="wrap">
@@ -177,43 +178,72 @@ var GUIDE={artisan:'fafcea-artisan.html',commercant:'agefice-commercant.html',li
 function eur(n){return n.toLocaleString('fr-FR',{maximumFractionDigits:0})+' €';}
 function onStatut(){
   var s=document.getElementById('statut').value;
-  document.getElementById('microWrap').style.display = (s==='micro')?'block':'none';
-  var libLike = (s==='liberal'||s==='salarie');
-  document.getElementById('plafWrap').style.display = libLike?'block':'none';
+  document.getElementById('microWrap').style.display=(s==='micro')?'block':'none';
+  document.getElementById('plafWrap').style.display=(s==='liberal'||s==='salarie')?'block':'none';
 }
 function calc(){
   var s=document.getElementById('statut').value;
   if(!s){alert('Choisissez votre statut.');return;}
-  var key=s;
-  var prefix='';
-  if(s==='micro'){
-    key=document.getElementById('microAct').value;
-    prefix="En tant que micro-entrepreneur, vous devez avoir déclaré du chiffre d'affaires et payé votre CFP pour ouvrir vos droits (0 € de CA = 0 € de droits). ";
-  }
+  var key=s, prefix='';
+  if(s==='micro'){key=document.getElementById('microAct').value;
+    prefix="En tant que micro-entrepreneur, vous devez avoir déclaré du chiffre d'affaires et payé votre CFP pour ouvrir vos droits (0 € de CA = 0 € de droits). ";}
   var f=FONDS[key];
   var cout=parseFloat(document.getElementById('cout').value)||0;
   var plafConnu=parseFloat(document.getElementById('plafConnu').value)||0;
-  var plafond = plafConnu>0 ? plafConnu : f.plaf;
-
+  var plafond=plafConnu>0?plafConnu:f.plaf;
   document.getElementById('fonds').textContent=f.nom;
   document.getElementById('fondsDesc').textContent=f.desc;
-  document.getElementById('plafond').textContent = plafond ? eur(plafond)+'/an' : 'selon votre profession';
-
+  document.getElementById('plafond').textContent=plafond?eur(plafond)+'/an':'selon votre profession';
   var racRow=document.getElementById('racRow');
-  if(plafond && cout>0){
-    var rac=Math.max(0,cout-plafond);
-    document.getElementById('rac').textContent=eur(rac)+(rac===0?' (entièrement couvert)':'');
-    racRow.style.display='flex';
-  } else if(cout>0 && !plafond){
-    document.getElementById('rac').textContent='indiquez votre plafond ci-dessus';
-    racRow.style.display='flex';
-  } else {
-    document.getElementById('rac').textContent='entrez le coût de la formation ci-dessus';
-    racRow.style.display='flex';
-  }
-  document.getElementById('note').textContent = prefix + f.note + " Si vous mobilisez votre CPF, une participation forfaitaire de 150 € est due depuis le 2 avril 2026 (sauf exonération).";
-  var g=document.getElementById('guideLink'); g.href=GUIDE[s]||'comparatif-fonds-formation.html';
+  if(plafond&&cout>0){var rac=Math.max(0,cout-plafond);
+    document.getElementById('rac').textContent=eur(rac)+(rac===0?' (entièrement couvert)':'');racRow.style.display='flex';}
+  else if(cout>0&&!plafond){document.getElementById('rac').textContent='indiquez votre plafond ci-dessus';racRow.style.display='flex';}
+  else{document.getElementById('rac').textContent='entrez le coût de la formation ci-dessus';racRow.style.display='flex';}
+  document.getElementById('note').textContent=prefix+f.note+" Si vous mobilisez votre CPF, une participation forfaitaire de 150 € est due depuis le 2 avril 2026 (sauf exonération).";
+  document.getElementById('guideLink').href=GUIDE[s]||'comparatif-fonds-formation.html';
   document.getElementById('res').classList.add('show');
+}
+
+/* Recherche instantanée */
+var PAGES=[
+  {u:'comparatif-fonds-formation.html',e:'⚖️',t:'Comparatif des fonds',k:'comparer tableau fafcea agefice fif-pl opco vivea cpf'},
+  {u:'demarches-financement-formation.html',e:'📝',t:'Les démarches',k:'demande dossier qualiopi delai remboursement'},
+  {u:'trouver-son-opco.html',e:'🔎',t:'Trouver son OPCO',k:'opco salarie idcc convention collective branche'},
+  {u:'lexique-financement-formation.html',e:'📖',t:'Lexique des sigles',k:'definition cfp rncp ptp vae aif'},
+  {u:'fafcea-artisan.html',e:'🔨',t:'Artisan → FAFCEA',k:'artisan fafcea rne cma'},
+  {u:'fafcea-batiment.html',e:'🏗️',t:'Artisan du bâtiment',k:'batiment maçon plombier electricien peintre rge'},
+  {u:'fafcea-coiffure-esthetique.html',e:'💇',t:'Coiffeur / esthéticienne',k:'coiffure esthetique salon beaute opco ep'},
+  {u:'agefice-commercant.html',e:'🏪',t:'Commerçant → AGEFICE',k:'commercant dirigeant rcs agefice'},
+  {u:'agefice-plafond-2026.html',e:'📊',t:'AGEFICE plafonds 2026',k:'plafond 3000 5000 600 agefice'},
+  {u:'fif-pl-profession-liberale.html',e:'⚖️',t:'Profession libérale → FIF-PL',k:'liberal fifpl naf'},
+  {u:'fif-pl-infirmier.html',e:'🩺',t:'Infirmier libéral',k:'infirmier idel andpc dpc fifpl'},
+  {u:'fif-pl-osteopathe.html',e:'💆',t:'Ostéopathe',k:'osteopathe fifpl liberal'},
+  {u:'fif-pl-avocat.html',e:'⚖️',t:'Avocat',k:'avocat fifpl formation continue'},
+  {u:'opco-salarie.html',e:'🏢',t:'Salarié → OPCO',k:'salarie opco employeur plan competences'},
+  {u:'vivea-agriculteur.html',e:'🌾',t:'Exploitant agricole → VIVEA',k:'agriculteur vivea msa exploitant'},
+  {u:'micro-entrepreneur-formation.html',e:'🚀',t:'Micro-entrepreneur',k:'micro auto entrepreneur cfp activite'},
+  {u:'cpf-150-euros-2026.html',e:'💳',t:'CPF : 150 € en 2026',k:'cpf participation 150 euros reforme moncompteformation'},
+  {u:'cpf-abondement-employeur.html',e:'🤝',t:'Abondement employeur (éviter 150 €)',k:'cpf abondement employeur exoneration'},
+  {u:'reste-a-charge-formation.html',e:'🧮',t:'Calculer son reste à charge',k:'reste a charge calcul exemple'},
+  {u:'cfp-urssaf-independant.html',e:'🧾',t:'La CFP (URSSAF)',k:'cfp contribution urssaf taux independant'},
+  {u:'formation-diplomante-financement.html',e:'🎓',t:'Formation diplômante',k:'diplomante certifiante rncp titre'},
+  {u:'dirigeant-sas-formation.html',e:'👔',t:'Président de SAS',k:'sas dirigeant assimile salarie gerant'},
+  {u:'formation-creation-entreprise-financement.html',e:'💡',t:'Création d\'entreprise',k:'creation reprise entreprise spi cci cma'},
+  {u:'bilan-competences-financement.html',e:'🧭',t:'Bilan de compétences',k:'bilan competences cpf 1600'},
+  {u:'vae-financement.html',e:'🎖️',t:'VAE',k:'vae validation acquis experience diplome'},
+  {u:'reconversion-financement-transitions-pro.html',e:'🔄',t:'Reconversion',k:'reconversion transitions pro ptp'},
+  {u:'formation-demandeur-emploi-aif.html',e:'🔓',t:'Demandeur d\'emploi (AIF)',k:'demandeur emploi france travail aif pole emploi chomage'},
+  {u:'financement-formation-anglais.html',e:'🇬🇧',t:'Formation d\'anglais',k:'anglais toeic linguaskill langue cpf'}
+];
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+function search(){
+  var q=norm(document.getElementById('q').value.trim());
+  var res=document.getElementById('searchResults'), br=document.getElementById('browse');
+  if(!q){res.style.display='none';res.innerHTML='';br.style.display='';return;}
+  var hits=PAGES.filter(function(p){return norm(p.t+' '+p.k).indexOf(q)>=0;});
+  br.style.display='none';res.style.display='grid';
+  res.innerHTML=hits.length?hits.map(function(p){return '<a class="tile" href="'+p.u+'"><div class="ic">'+p.e+'</div><h3>'+p.t+'</h3></a>';}).join('')
+    :'<p style="grid-column:1/-1;text-align:center;color:var(--mut);padding:20px">Aucun guide trouvé. Essayez « artisan », « CPF », « reconversion »…</p>';
 }
 </script>
 <script type="application/ld+json">
