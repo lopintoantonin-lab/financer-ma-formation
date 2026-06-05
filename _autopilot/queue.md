@@ -25,10 +25,17 @@ Cible : des questions PRÉCISES que les gens tapent, mal couvertes ailleurs. Chi
 ---
 
 ## ✅ Les 12 pages de lancement sont construites (01/06/2026).
-## Prochaines idées pour l'autopilote (à compléter / construire ensuite) :
+## ✅ 05/06 : refonte accueil (guides en cartes) + nouvelle page `guides.html` (hub par métier/dispositif/situation) + `fif-pl-kine.html` (300 €/j, 900 €/an 2026, vérifié).
+## ⚠️ Déjà construites (ne PAS refaire) : reconversion-financement-transitions-pro, fafcea-coiffure-esthetique, fif-pl-avocat, trouver-son-opco.
 
-- [ ] **transitions-pro-reconversion.html** — Financer une reconversion (Projet de Transition Professionnelle)
-- [ ] **fafcea-coiffure-esthetique.html** — Financement formation coiffeur / esthéticienne (FAFCEA)
-- [ ] **fif-pl-avocat.html** — Financement formation avocat (FIF-PL, grille profession)
-- [ ] **opco-quel-est-le-mien.html** — Trouver son OPCO à partir de sa convention collective (IDCC)
+## Prochaines idées (professions libérales très recherchées — vérifier le plafond/thèmes sur fifpl.fr) :
+
+- [ ] **fif-pl-psychologue.html** — Financer sa formation de psychologue libéral (FIF-PL, hors DPC santé)
+- [ ] **fif-pl-sage-femme.html** — Sage-femme libérale (FIF-PL + ANDPC/DPC)
+- [ ] **fif-pl-veterinaire.html** — Vétérinaire libéral (FIF-PL)
+- [ ] **fif-pl-architecte.html** — Architecte libéral (FIF-PL)
+- [ ] **fif-pl-podologue.html** — Pédicure-podologue (FIF-PL + DPC)
 - [ ] **formation-gratuite-independant.html** — Peut-on se former gratuitement en tant qu'indépendant ?
+- [ ] **conjoint-collaborateur-formation.html** — Financer la formation du conjoint collaborateur (FAFCEA/AGEFICE)
+
+> ⚠️ Quand tu construis une page profession : ajoute aussi sa carte dans `guides.html` (section « Par métier »), pas seulement dans `index.html`.
