@@ -28,14 +28,18 @@ Cible : des questions PRÉCISES que les gens tapent, mal couvertes ailleurs. Chi
 ## ✅ 05/06 : refonte accueil (guides en cartes) + nouvelle page `guides.html` (hub par métier/dispositif/situation) + `fif-pl-kine.html` (300 €/j, 900 €/an 2026, vérifié).
 ## ⚠️ Déjà construites (ne PAS refaire) : reconversion-financement-transitions-pro, fafcea-coiffure-esthetique, fif-pl-avocat, trouver-son-opco.
 
-## Prochaines idées (professions libérales très recherchées — vérifier le plafond/thèmes sur fifpl.fr) :
+## ✅ 05/06 (2e session) : batch de 7 pages publié — psychologue, sage-femme, vétérinaire (900 €/an vérifié), architecte, podologue, conjoint-collaborateur, formation-gratuite-independant. Toutes branchées dans guides.html + recherche + sitemap.
 
-- [ ] **fif-pl-psychologue.html** — Financer sa formation de psychologue libéral (FIF-PL, hors DPC santé)
-- [ ] **fif-pl-sage-femme.html** — Sage-femme libérale (FIF-PL + ANDPC/DPC)
-- [ ] **fif-pl-veterinaire.html** — Vétérinaire libéral (FIF-PL)
-- [ ] **fif-pl-architecte.html** — Architecte libéral (FIF-PL)
-- [ ] **fif-pl-podologue.html** — Pédicure-podologue (FIF-PL + DPC)
-- [ ] **formation-gratuite-independant.html** — Peut-on se former gratuitement en tant qu'indépendant ?
-- [ ] **conjoint-collaborateur-formation.html** — Financer la formation du conjoint collaborateur (FAFCEA/AGEFICE)
+## Prochaines idées (vérifier les chiffres sur source officielle avant d'écrire) :
 
-> ⚠️ Quand tu construis une page profession : ajoute aussi sa carte dans `guides.html` (section « Par métier »), pas seulement dans `index.html`.
+- [ ] **fif-pl-dentiste.html** — Chirurgien-dentiste libéral (FIF-PL + DPC/ANDPC)
+- [ ] **fif-pl-orthophoniste.html** — Orthophoniste libéral (FIF-PL + DPC)
+- [ ] **fif-pl-expert-comptable.html** — Expert-comptable libéral (FIF-PL) — edge Antonin
+- [ ] **fif-pl-medecin.html** — Médecin libéral (DPC/ANDPC + FIF-PL)
+- [ ] **agefice-restaurateur.html** — Financer sa formation quand on tient un restaurant (AGEFICE)
+- [ ] **financement-permis-cpf.html** — Financer le permis (B / poids lourd) avec le CPF
+- [ ] **opco-2026-liste.html** — Les 11 OPCO en 2026 : lequel pour ma branche (par IDCC)
+- [ ] **cpf-refus-que-faire.html** — CPF / fonds : que faire en cas de refus de prise en charge ?
+
+> ⚠️ Pour une page profession : ajouter sa carte dans `guides.html` (section « Par métier »), dans l'array PAGES de `index.html` (recherche), ET dans `sitemap.xml`. Modèle de référence : `fif-pl-kine.html`.
+> ⚠️ Ne jamais inventer un plafond précis : si la grille varie, donner le mécanisme + renvoyer à la fiche fifpl.fr (code NAF).
