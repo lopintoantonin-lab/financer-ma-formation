@@ -143,3 +143,16 @@ footer a{color:var(--mut)}
 .linklist a{display:block;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;break-inside:avoid;color:var(--ink)}
 .linklist a:hover{color:var(--brand);text-decoration:none}
 @media(max-width:600px){.linklist{column-count:1}}
+
+/* FAQ en accordéon */
+.qa{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;box-shadow:var(--shadow);overflow:hidden}
+.qa summary{cursor:pointer;font-weight:700;font-size:15.5px;color:var(--ink);padding:16px 18px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";color:var(--brand);font-size:24px;font-weight:700;line-height:1;transition:transform .2s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa .a{padding:0 18px 16px;color:var(--mut);font-size:14.5px}
+
+/* Familles de guides (cartes d'entrée + sous-titre de catégorie) */
+.cat-lead{display:block;font-size:13px;color:var(--mut);margin-top:6px}
+.cat-h{font-size:18px;font-weight:800;letter-spacing:-.3px;margin:30px 0 2px;text-align:left;color:var(--ink);display:flex;align-items:center;gap:9px}
+.cat-h span{font-size:22px}
